@@ -18,7 +18,7 @@ public class GUILogin extends javax.swing.JFrame {
      */
     public GUILogin() {
         initComponents();
-        jButton1.addActionListener(new OAutenticacion());
+        jButton1.addActionListener(new OAutenticacion(this, jButton1, jTextField1, jPasswordField1, jRadioButton1, jRadioButton2));
     }
 
     /**

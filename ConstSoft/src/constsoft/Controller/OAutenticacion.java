@@ -37,7 +37,7 @@ public class OAutenticacion implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
         Object botonPresionado = ae.getSource();
         if(botonPresionado==jButton1){
-            new GestorAutenticacion(campo1, campo2, opcion1, opcion2 );
+            GestorAutenticacion au = new GestorAutenticacion(campo1, campo2, opcion1, opcion2 );
         }
     }
     
