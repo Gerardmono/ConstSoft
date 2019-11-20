@@ -18,7 +18,7 @@ public class GUIMenuAdmin extends javax.swing.JFrame {
      */
     public GUIMenuAdmin() {
         initComponents();
-        OAdministrador oyente= new OAdministrador(this, jButton1,jButton2,jButton3,jButton4,jButton5,jButton6);
+        OAdministrador oyente= new OAdministrador(this,jButton1,jButton2,jButton3,jButton4,jButton5,jButton6);
         jButton1.addActionListener(oyente);
         jButton2.addActionListener(oyente);
         jButton3.addActionListener(oyente);
