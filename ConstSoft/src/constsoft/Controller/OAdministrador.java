@@ -16,10 +16,10 @@ import javax.swing.*;
  */
 public class OAdministrador implements ActionListener{
     GUIMenuAdmin menu;
-    JButton boton1, boton2, boton3, boton4, boton5, boton6;
+    JButton boton1, boton2, boton3, boton4, boton5, boton6, boton7;
 
     public OAdministrador(GUIMenuAdmin menu, JButton boton1, JButton boton2, 
-            JButton boton3, JButton boton4, JButton boton5, JButton boton6) {
+            JButton boton3, JButton boton4, JButton boton5, JButton boton6, JButton boton7) {
         this.menu = menu;
         this.boton1 = boton1;
         this.boton2 = boton2;
@@ -27,6 +27,7 @@ public class OAdministrador implements ActionListener{
         this.boton4 = boton4;
         this.boton5 = boton5;
         this.boton6 = boton6;
+        this.boton7 = boton7;
     }
 
     
@@ -52,6 +53,9 @@ public class OAdministrador implements ActionListener{
         } else if(presionado == boton6){
             new GUICrearReporte().setVisible(true);
             menu.setVisible(false);
+        } else if(presionado == boton6){
+            new GUICrearPerfilAdmin().setVisible(true);
+            menu.setVisible(false );
         }
     }
     

@@ -18,13 +18,14 @@ public class GUIMenuAdmin extends javax.swing.JFrame {
      */
     public GUIMenuAdmin() {
         initComponents();
-        OAdministrador oyente= new OAdministrador(this,jButton1,jButton2,jButton3,jButton4,jButton5,jButton6);
+        OAdministrador oyente= new OAdministrador(this,jButton1,jButton2,jButton3,jButton4,jButton5,jButton6, jButton7);
         jButton1.addActionListener(oyente);
         jButton2.addActionListener(oyente);
         jButton3.addActionListener(oyente);
         jButton4.addActionListener(oyente);
         jButton5.addActionListener(oyente);
         jButton6.addActionListener(oyente);
+        jButton7.addActionListener(oyente);
     }
 
     /**
@@ -46,6 +47,7 @@ public class GUIMenuAdmin extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,6 +71,8 @@ public class GUIMenuAdmin extends javax.swing.JFrame {
 
         jButton6.setText("Crear Reportes");
 
+        jButton7.setText("Crear Administrador");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -76,6 +80,7 @@ public class GUIMenuAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton7)
                     .addComponent(jButton6)
                     .addComponent(jLabel4)
                     .addComponent(jButton5)
@@ -86,13 +91,15 @@ public class GUIMenuAdmin extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jButton1)
                     .addComponent(jLabel1))
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -111,7 +118,7 @@ public class GUIMenuAdmin extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton6)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,6 +166,7 @@ public class GUIMenuAdmin extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
