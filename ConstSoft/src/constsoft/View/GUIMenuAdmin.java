@@ -26,6 +26,7 @@ public class GUIMenuAdmin extends javax.swing.JFrame {
         jButton5.addActionListener(oyente);
         jButton6.addActionListener(oyente);
         jButton7.addActionListener(oyente);
+        
     }
 
     /**
