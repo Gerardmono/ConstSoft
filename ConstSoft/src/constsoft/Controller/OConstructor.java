@@ -5,20 +5,17 @@
  */
 package constsoft.Controller;
 
-import constsoft.Model.GestorConstructor;
+import constsoft.Model.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 /**
  *
  * @author bakai
  */
-public class OConstructor {
-      JTextField texto1, texto2, texto3, texto4;
+public class OConstructor implements ActionListener{
+     JTextField texto1, texto2, texto3, texto4;
     JPasswordField pass1, pass2;
     JButton boton1;
 
@@ -33,11 +30,9 @@ public class OConstructor {
         this.pass2 = pass2;
         this.boton1 = boton1;
     }
-    
-    
-   
+
+    @Override
     public void actionPerformed(ActionEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         Object presionado = e.getSource();
         
         if(presionado == boton1){
@@ -45,4 +40,11 @@ public class OConstructor {
             cons.insertarConst(texto1, texto2, texto3, texto4, pass1);
         }
     }
+    
+    
+    
+   
+ 
+    
+  
 }
