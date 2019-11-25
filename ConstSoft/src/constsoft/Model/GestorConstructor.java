@@ -48,6 +48,9 @@ public class GestorConstructor {
          }
          MySQLDB.consultaActualiza(st, query);
          MySQLDB.cerrar(st);
-         
+    }
+    
+    public void visualizar_constructoras(){
+        
     }
 }

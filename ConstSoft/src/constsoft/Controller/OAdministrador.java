@@ -36,26 +36,32 @@ public class OAdministrador implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         Object presionado = e.getSource();
         if(presionado == boton1){
+             menu.setVisible(false);
             new GUIVerPerfilAdmin().setVisible(true);
-            menu.setVisible(false);
+           
         } else if(presionado == boton2){
+            menu.setVisible(false);
             new GUICrearPerfilContructor().setVisible(true);
-            menu.setVisible(false);
+            
         } else if(presionado == boton3){
+             menu.setVisible(false);
             new GUIListaPerfilConst().setVisible(true);
-            menu.setVisible(false);
+           
         } else if(presionado == boton4){
+            menu.setVisible(false);
             new GUICrearProyecto().setVisible(true);
-            menu.setVisible(false);
+            
         } else if(presionado == boton5){
+            menu.setVisible(false);
             new GUIListaProyecto().setVisible(true);
-            menu.setVisible(false);
+            
         } else if(presionado == boton6){
-            new GUICrearReporte().setVisible(true);
             menu.setVisible(false);
+            new GUICrearReporte().setVisible(true);         
         } else if(presionado == boton6){
-            new GUICrearPerfilAdmin().setVisible(true);
             menu.setVisible(false );
+            new GUICrearPerfilAdmin().setVisible(true);
+            
         }
     }
     
