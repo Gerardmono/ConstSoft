@@ -5,6 +5,8 @@
  */
 package constsoft.View;
 
+import constsoft.Controller.OModelo;
+
 /**
  *
  * @author Gerardo Ramirez
@@ -16,6 +18,11 @@ public class GUIListaModelo extends javax.swing.JFrame {
      */
     public GUIListaModelo() {
         initComponents();
+        OModelo modelo=new OModelo(verButton,editButton,deleteButton,modeloTable,this);
+        verButton.addActionListener(modelo);
+        editButton.addActionListener(modelo);
+        deleteButton.addActionListener(modelo);
+        
     }
 
     /**
@@ -34,6 +41,7 @@ public class GUIListaModelo extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         deleteButton = new javax.swing.JButton();
         editButton = new javax.swing.JButton();
+        verButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +68,8 @@ public class GUIListaModelo extends javax.swing.JFrame {
 
         editButton.setText("editar");
 
+        verButton.setText("ver");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -75,6 +85,8 @@ public class GUIListaModelo extends javax.swing.JFrame {
                 .addContainerGap(49, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(verButton)
+                .addGap(91, 91, 91)
                 .addComponent(editButton)
                 .addGap(47, 47, 47)
                 .addComponent(deleteButton)
@@ -92,11 +104,16 @@ public class GUIListaModelo extends javax.swing.JFrame {
                         .addComponent(jLabel9)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(deleteButton)
-                    .addComponent(editButton))
-                .addGap(38, 38, 38))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(deleteButton)
+                            .addComponent(editButton)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(verButton)))
+                .addGap(29, 29, 29))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -158,5 +175,6 @@ public class GUIListaModelo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable modeloTable;
+    private javax.swing.JButton verButton;
     // End of variables declaration//GEN-END:variables
 }

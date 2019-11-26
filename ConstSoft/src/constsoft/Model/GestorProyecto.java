@@ -262,4 +262,8 @@ public class GestorProyecto {
         MySQLDB.cerrar(st);
         tm.removeRow(tabla.getSelectedRow());
     }
+     public void VerProyecto(JTable tabla){
+           DefaultTableModel tm = (DefaultTableModel) tabla.getModel();
+           String dato=(String) tm.getValueAt(tabla.getSelectedRow(),0);
+     }
 }

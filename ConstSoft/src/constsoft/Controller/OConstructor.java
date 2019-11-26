@@ -85,8 +85,8 @@ public class OConstructor implements ActionListener{
             
         }else if (presionado == boton7) {
              menu.setVisible(false);
-             GUIListaProyecto lisp=new GUIListaProyecto();
-             new GestorProyecto().llenaTabla(lisp.proyectoTabla);             
+             GUIListaModelo lisp=new GUIListaModelo();
+             new GestorModelo().llenaTabla(lisp.modeloTable);             
             lisp.setVisible(true);
         }else if (presionado == boton8) {
              menu.setVisible(false);

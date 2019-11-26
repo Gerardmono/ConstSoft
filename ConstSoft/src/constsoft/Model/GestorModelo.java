@@ -186,16 +186,49 @@ public class GestorModelo {
         MySQLDB.cerrar(st);
     }
     
-    public void eliminarProyecto(JTable tabla){ 
+    public void eliminarModelo(JTable tabla){ 
         DefaultTableModel tm = (DefaultTableModel) tabla.getModel();
         String dato=(String) tm.getValueAt(tabla.getSelectedRow(),0);
         int id = Integer.parseInt(dato);
         MySQLDB.conectar();
-        String cadena="delete from proyecto where id_proyecto="+id;
+        String cadena="delete from modelo where id_modelo="+id;
         Statement st = MySQLDB.conexion();
         MySQLDB.consultaActualiza(st, cadena);
         MySQLDB.cerrar(st);
         tm.removeRow(tabla.getSelectedRow());
+    }
+    public void verModelo(JTable tabla){
+        DefaultTableModel tm = (DefaultTableModel) tabla.getModel();
+        String dato=(String) tm.getValueAt(tabla.getSelectedRow(),0);
+        MySQLDB.conectar();
+         Statement st = MySQLDB.conexion();
+        String cadena="Select modelos.name,mconstruccion,mterreno,niveles,precio, "
+                + "tipo_propiedad.name,proyecto.nombre from modelos join tipo_propiedad "
+                + "on modelos.id_tipopropiedad = tipo_propiedad.id_tipo_propiedad join proyecto on "
+                + "proyecto.id_proyecto = modelos.id_proyecto where id_modelo='"+dato+"'";
+        
+       ResultSet rs = MySQLDB.consultaQuery(st, cadena);     
+         if (rs != null) {          
+              try {
+                  while (rs.next()) {
+                    Object dato1[]=new Object[7];
+                        GUIVerModelo.modelText.setText(rs.getString("modelos.name"));
+                        GUIVerModelo.mconText.setText(rs.getString("mconstruccion"));
+                        GUIVerModelo.mterText.setText(rs.getString("mterreno"));
+                        GUIVerModelo.preText.setText(rs.getString("precio"));
+                        GUIVerModelo.nivelText.setText(rs.getString("niveles"));
+                        GUIVerModelo.propiedadText.setText(rs.getString("tipo_propiedad.name"));
+                        GUIVerModelo.proyecText.setText(rs.getString("proyecto.nombre"));
+                        
+                        
+                  }
+              } catch (SQLException ex) {
+                  //Logger.getLogger(I_VMedicamentos.class.getName()).log(Level.SEVERE, null, ex);
+                  System.out.println(ex);
+              }
+            MySQLDB.cerrar1(rs);
+        }
+        MySQLDB.cerrar(st);
     }
     
 }
