@@ -69,10 +69,10 @@
                                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="pagoComb" min="-2" pref="188" max="-2" attributes="0"/>
-                                  <Component id="propiedadCombo" min="-2" pref="182" max="-2" attributes="0"/>
-                                  <Component id="proyectoComb" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="pagoComb" pref="188" max="32767" attributes="0"/>
+                                  <Component id="proyectoComb" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="propiedadCombo" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
