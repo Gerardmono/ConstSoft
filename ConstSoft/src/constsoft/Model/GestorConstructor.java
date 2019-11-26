@@ -80,6 +80,10 @@ public class GestorConstructor {
         MySQLDB.cerrar(st);
     }
     
+    public void llena(){
+        
+    }
+    
     public void eliminarConst(JTable tabla){ 
         DefaultTableModel tm = (DefaultTableModel) tabla.getModel();
         String dato=(String) tm.getValueAt(tabla.getSelectedRow(),0);
@@ -89,6 +93,7 @@ public class GestorConstructor {
         Statement st = MySQLDB.conexion();
         MySQLDB.consultaActualiza(st, cadena);
         MySQLDB.cerrar(st);
+        tm.removeRow(tabla.getSelectedRow());
     }
     
     public void visualizar_constructoras(){
