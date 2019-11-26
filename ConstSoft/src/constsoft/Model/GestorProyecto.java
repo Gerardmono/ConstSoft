@@ -55,7 +55,7 @@ public class GestorProyecto {
          MySQLDB.cerrar(st);
     }
     public static void llenarComboPago(){
-          MySQLDB.conectar();
+        MySQLDB.conectar();
         Statement st1 = MySQLDB.conexion(); 
         // Se elimina la tabla "personal" en caso de existir.
         String cadena1="Select name from formapago";
@@ -110,21 +110,21 @@ public class GestorProyecto {
         }   
     }
     public static void llenarComboConstructor(){
-          MySQLDB.conectar();
+        MySQLDB.conectar();
         Statement st1 = MySQLDB.conexion(); 
         // Se elimina la tabla "personal" en caso de existir.
         String cadena1="Select nombre from constructor";
         ResultSet rs1 = MySQLDB.consultaQuery(st1, cadena1);
-         if (rs1 != null) {          
-              try {                  
-                   GUICrearProyecto.consCombo.addItem("Seleccione Constructor");
-                  while (rs1.next()) {
-                            GUICrearProyecto.consCombo.addItem(rs1.getString("nombre"));
-                  }              
-              } catch (SQLException ex) {
-                  //Logger.getLogger(I_Medicamentos.class.getName()).log(Level.SEVERE, null, ex);
-                  System.out.println(ex);
-              }            
+        if (rs1 != null) {          
+            try {                  
+                GUICrearProyecto.consCombo.addItem("Seleccione Constructor");
+                while (rs1.next()) {
+                    GUICrearProyecto.consCombo.addItem(rs1.getString("nombre"));
+                }              
+            } catch (SQLException ex) {
+                //Logger.getLogger(I_Medicamentos.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex);
+            }            
         }   
     }
     

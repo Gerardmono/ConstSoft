@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 public class GestorConstructor {
     
     
-    
+    /*
     public void insertarConst(JTextField texto1, JTextField texto2,JTextField texto3,JTextField texto4, JPasswordField pass1){
         String name, telefono,direccion,correo, contraseña;
         name=texto1.getText();
@@ -44,9 +44,64 @@ public class GestorConstructor {
          }else{
              query="rollback";
              JOptionPane.showMessageDialog(null,"Datos no guardados");
-         }
-         MySQLDB.consultaActualiza(st, query);
-         MySQLDB.cerrar(st);
+        }
+        MySQLDB.consultaActualiza(st, query);
+        MySQLDB.cerrar(st);
+    }*/
+    
+    public void insertarConst(JTextField texto1, JTextField texto2,JComboBox texto3,JTextField texto4, JPasswordField pass1){
+        String name, telefono,constructora,correo, contraseña, id="";
+        name=texto1.getText();
+        telefono = texto2.getText();
+        constructora = (String) texto3.getSelectedItem();
+        correo = texto4.getText();
+        contraseña = pass1.getText();
+        MySQLDB.conectar();
+        String cadena="select id_constructora from constructora "
+                + "where nombre_completo='"+constructora+"'";
+        Statement st = MySQLDB.conexion();
+        ResultSet rs = MySQLDB.consultaQuery(st, cadena);
+        if (rs!=null) {
+            try {
+                while (rs.next()) {
+                    id=rs.getString(1);
+                } 
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+            System.out.println(id);
+        }
+        String query="begin";
+        MySQLDB.consultaActualiza(st, query);
+        query="insert into constructor values(NULL,'"+name+"','"+telefono+"','"+correo+"','"+contraseña+"',"+id+")";
+        MySQLDB.consultaActualiza(st, query);
+        int decision=JOptionPane.showConfirmDialog(null,"Desea guardar los datos los datos");
+        if(decision==0){
+             query="commit;";
+             JOptionPane.showMessageDialog(null,"Datos guardados");
+        }else{
+             query="rollback";
+             JOptionPane.showMessageDialog(null,"Datos no guardados");
+        }
+        MySQLDB.consultaActualiza(st, query);
+        MySQLDB.cerrar(st);
+        //insertarConstructor(name, telefono, direccion, correo, contraseña);
+    }
+    
+    public void llenaConstructoras(JComboBox combo){
+        MySQLDB.conectar();
+        String cadena = "select nombre_completo from constructora";
+        Statement st = MySQLDB.conexion();
+        ResultSet rs = MySQLDB.consultaQuery(st, cadena);
+        if (rs!=null) {
+            try {
+                while (rs.next()) {
+                    combo.addItem(rs.getString(1));
+                } 
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+        }
     }
     
     public void llenaTabla(JTable tabla){

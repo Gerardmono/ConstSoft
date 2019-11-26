@@ -59,7 +59,9 @@ public class OAdministrador implements ActionListener{
            
         } else if(presionado == boton2){
             menu.setVisible(false);
-            new GUICrearPerfilContructor().setVisible(true);
+            GUICrearPerfilContructor nConst=new GUICrearPerfilContructor();
+            new GestorConstructor().llenaConstructoras(nConst.jComboBox1);
+            nConst.setVisible(true);
             
         } else if(presionado == boton3){
             menu.setVisible(false);

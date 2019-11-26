@@ -16,13 +16,14 @@ import javax.swing.*;
  * @author bakai
  */
 public class OConstructor implements ActionListener{
-    JTextField texto1, texto2, texto3, texto4;
+    JTextField texto1, texto2, texto4;
+    JComboBox texto3;
     JPasswordField pass1, pass2;
     JButton boton1, boton2, boton3, boton4;
     JTable tabla;
     GUIListaPerfilConst lista;
 
-    public OConstructor(JTextField texto1, JTextField texto2, JTextField texto3, 
+    public OConstructor(JTextField texto1, JTextField texto2, JComboBox texto3, 
             JTextField texto4, JPasswordField pass1, JPasswordField pass2, 
             JButton boton1) {
         this.texto1 = texto1;
@@ -54,6 +55,7 @@ public class OConstructor implements ActionListener{
         }else if (presionado == boton3) {
             //editar
             GestorConstructor con=new GestorConstructor();
+            
             
         }else if (presionado == boton4) {
             //eliminar
