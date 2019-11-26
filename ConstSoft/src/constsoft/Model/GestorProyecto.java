@@ -250,4 +250,16 @@ public class GestorProyecto {
         MySQLDB.cerrar1(rs);
         MySQLDB.cerrar(st);
     }
+    
+     public void eliminarProyecto(JTable tabla){ 
+        DefaultTableModel tm = (DefaultTableModel) tabla.getModel();
+        String dato=(String) tm.getValueAt(tabla.getSelectedRow(),0);
+        int id = Integer.parseInt(dato);
+        MySQLDB.conectar();
+        String cadena="delete from proyecto where id_proyecto="+id;
+        Statement st = MySQLDB.conexion();
+        MySQLDB.consultaActualiza(st, cadena);
+        MySQLDB.cerrar(st);
+        tm.removeRow(tabla.getSelectedRow());
+    }
 }

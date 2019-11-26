@@ -11,7 +11,9 @@ import java.sql.Statement;
 import constsoft.View.*;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Gerardo Ramirez
@@ -148,5 +150,52 @@ public class GestorModelo {
         MySQLDB.cerrar(st);
     }
     
+    public void llenaTabla(JTable tabla){
+        MySQLDB.conectar();
+        String cadena1="Select id_modelo, modelos.name,mconstruccion,mterreno,niveles,precio, "
+                + "tipo_propiedad.name,proyecto.nombre from modelos join tipo_propiedad "
+                + "on modelos.id_tipopropiedad = tipo_propiedad.id_tipo_propiedad join proyecto on "
+                + "proyecto.id_proyecto = modelos.id_proyecto";
+        Statement st = MySQLDB.conexion();
+        ResultSet rs = MySQLDB.consultaQuery(st, cadena1);
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("ID");
+        model.addColumn("modelo");
+        model.addColumn("M Construccion");
+        model.addColumn("M terreno");
+        model.addColumn("Niveles");
+        model.addColumn("precio");
+        model.addColumn("tipo propiedad");
+        model.addColumn("proyecto");
+        
+        if (rs!=null) {
+            try {
+                while (rs.next()) {
+                    Object dato[]=new Object[8];
+                    for(int i=0;i<8;i++){
+                        dato[i]=rs.getString(i+1);
+                    }
+                    model.addRow(dato);
+                } 
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+        }
+        tabla.setModel(model);
+        MySQLDB.cerrar1(rs);
+        MySQLDB.cerrar(st);
+    }
+    
+    public void eliminarProyecto(JTable tabla){ 
+        DefaultTableModel tm = (DefaultTableModel) tabla.getModel();
+        String dato=(String) tm.getValueAt(tabla.getSelectedRow(),0);
+        int id = Integer.parseInt(dato);
+        MySQLDB.conectar();
+        String cadena="delete from proyecto where id_proyecto="+id;
+        Statement st = MySQLDB.conexion();
+        MySQLDB.consultaActualiza(st, cadena);
+        MySQLDB.cerrar(st);
+        tm.removeRow(tabla.getSelectedRow());
+    }
     
 }

@@ -5,6 +5,8 @@
  */
 package constsoft.View;
 
+import constsoft.Controller.OProyecto;
+
 /**
  *
  * @author Gerardo Ramirez
@@ -16,6 +18,10 @@ public class GUIListaProyecto extends javax.swing.JFrame {
      */
     public GUIListaProyecto() {
         initComponents();
+        OProyecto opro =new OProyecto(deleteButton,editButton,backButton,proyectoTabla,this);
+        deleteButton.addActionListener(opro);
+        editButton.addActionListener(opro);
+        backButton.addActionListener(opro);
     }
 
     /**
@@ -30,10 +36,10 @@ public class GUIListaProyecto extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         proyectoTabla = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
+        editButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,20 +61,20 @@ public class GUIListaProyecto extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(proyectoTabla);
 
-        jButton2.setText("Regresar");
-        jButton2.setToolTipText("");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setText("Regresar");
+        backButton.setToolTipText("");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
 
         jLabel9.setFont(new java.awt.Font("Dialog", 3, 24)); // NOI18N
         jLabel9.setText("Lista proyectos");
 
-        jButton3.setText("Eliminar");
+        deleteButton.setText("Eliminar");
 
-        jButton4.setText("Editar");
+        editButton.setText("Editar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -79,15 +85,15 @@ public class GUIListaProyecto extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(backButton)
                         .addGap(101, 101, 101)
                         .addComponent(jLabel9)))
                 .addContainerGap(49, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addComponent(editButton)
                 .addGap(76, 76, 76)
-                .addComponent(jButton3)
+                .addComponent(deleteButton)
                 .addGap(162, 162, 162))
         );
         jPanel1Layout.setVerticalGroup(
@@ -96,7 +102,7 @@ public class GUIListaProyecto extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(7, 7, 7)
-                        .addComponent(jButton2))
+                        .addComponent(backButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel9)))
@@ -104,8 +110,8 @@ public class GUIListaProyecto extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(deleteButton)
+                    .addComponent(editButton))
                 .addGap(32, 32, 32))
         );
 
@@ -129,9 +135,9 @@ public class GUIListaProyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_proyectoTablaMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_backButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,9 +176,9 @@ public class GUIListaProyecto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton backButton;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton editButton;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

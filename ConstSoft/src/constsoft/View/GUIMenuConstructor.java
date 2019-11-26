@@ -5,6 +5,8 @@
  */
 package constsoft.View;
 
+import constsoft.Controller.OConstructor;
+
 /**
  *
  * @author GuillermoAugusto
@@ -16,6 +18,15 @@ public class GUIMenuConstructor extends javax.swing.JFrame {
      */
     public GUIMenuConstructor() {
         initComponents();
+        OConstructor ocon= new OConstructor(this,jButton1,jButton4,jButton3,jButton2,jButton7,jButton6,jButton5);
+        jButton1.addActionListener(ocon);
+        jButton4.addActionListener(ocon);
+        jButton3.addActionListener(ocon);
+        jButton2.addActionListener(ocon);
+        jButton7.addActionListener(ocon);
+        jButton6.addActionListener(ocon);
+        jButton5.addActionListener(ocon);
+        
     }
 
     /**
