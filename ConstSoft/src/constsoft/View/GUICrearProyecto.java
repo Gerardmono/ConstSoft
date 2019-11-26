@@ -5,17 +5,27 @@
  */
 package constsoft.View;
 
+import constsoft.Controller.OProyecto;
+import constsoft.Model.GestorProyecto;
+
 /**
  *
  * @author bakai
  */
 public class GUICrearProyecto extends javax.swing.JFrame {
-
+    
+    
     /**
      * Creates new form GUICrearProyecto
      */
     public GUICrearProyecto() {
         initComponents();
+        GestorProyecto.llenarComboPago();
+        GestorProyecto.llenarComboEstado();
+        GestorProyecto.llenarComboConstructor();
+        OProyecto oproyecto=new OProyecto(pagoCombo,edoCombo,muniCombo,consCombo,nomField,saveButton);
+        edoCombo.addActionListener(oproyecto);
+        saveButton.addActionListener(oproyecto);
     }
 
     /**
@@ -35,11 +45,11 @@ public class GUICrearProyecto extends javax.swing.JFrame {
         pagoCombo = new javax.swing.JComboBox<>();
         edoCombo = new javax.swing.JComboBox<>();
         muniCombo = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        saveButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        consCombo = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,10 +73,10 @@ public class GUICrearProyecto extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        saveButton.setText("Guardar");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                saveButtonActionPerformed(evt);
             }
         });
 
@@ -86,7 +96,7 @@ public class GUICrearProyecto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(saveButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,7 +111,7 @@ public class GUICrearProyecto extends javax.swing.JFrame {
                             .addComponent(pagoCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(edoCombo, 0, 170, Short.MAX_VALUE)
                             .addComponent(muniCombo, 0, 170, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(consCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(36, 36, 36))
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
@@ -142,9 +152,9 @@ public class GUICrearProyecto extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(consCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(saveButton)
                 .addGap(38, 38, 38))
         );
 
@@ -155,9 +165,9 @@ public class GUICrearProyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nomFieldActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_saveButtonActionPerformed
 
     private void muniComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_muniComboActionPerformed
         // TODO add your handling code here:
@@ -199,18 +209,18 @@ public class GUICrearProyecto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> edoCombo;
-    private javax.swing.JButton jButton1;
+    public static javax.swing.JComboBox<String> consCombo;
+    public static javax.swing.JComboBox<String> edoCombo;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JComboBox<String> muniCombo;
+    public static javax.swing.JComboBox<String> muniCombo;
     private javax.swing.JTextField nomField;
-    private javax.swing.JComboBox<String> pagoCombo;
+    public static javax.swing.JComboBox<String> pagoCombo;
+    private javax.swing.JButton saveButton;
     // End of variables declaration//GEN-END:variables
 }

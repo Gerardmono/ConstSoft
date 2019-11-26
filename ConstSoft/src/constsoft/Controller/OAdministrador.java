@@ -79,7 +79,6 @@ public class OAdministrador implements ActionListener{
             menu.setVisible(false );
             new GUICrearPerfilAdmin().setVisible(true);   
         }else if(presionado == guardar){
-            menu.setVisible(false);
             GestorAdministrador admin= new GestorAdministrador();
             admin.crearAdministrador(texto1, texto2, texto3, texto4, pass1, pass2);
         }

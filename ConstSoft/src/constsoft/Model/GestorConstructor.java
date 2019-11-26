@@ -15,9 +15,7 @@ import javax.swing.*;
  */
 public class GestorConstructor {
     
-    public GestorConstructor(){
-        
-    }
+    
     
     public void insertarConst(JTextField texto1, JTextField texto2,JTextField texto3,JTextField texto4, JPasswordField pass1){
         String name, telefono,direccion,correo, contraseña;
