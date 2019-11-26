@@ -80,7 +80,7 @@ public class GestorConstructor {
         MySQLDB.cerrar(st);
     }
     
-    public void eliminarConst(JTable tabla){
+    public void eliminarConst(JTable tabla){ 
         DefaultTableModel tm = (DefaultTableModel) tabla.getModel();
         int id = (int) tm.getValueAt(tabla.getSelectedRow(),0);
         MySQLDB.conectar();

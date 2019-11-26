@@ -32,7 +32,7 @@ public class OAdministrador implements ActionListener{
         this.boton4 = boton4;
         this.boton5 = boton5;
         this.boton6 = boton6;
-        this.boton7 = boton7;
+        this.boton7 = boton7; 
     }
 
     public OAdministrador(JTextField texto1, JTextField texto2, JTextField texto3, 
