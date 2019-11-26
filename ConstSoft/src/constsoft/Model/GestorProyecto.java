@@ -11,7 +11,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -212,6 +214,40 @@ public class GestorProyecto {
               }
             MySQLDB.cerrar1(rs);
         }
+        MySQLDB.cerrar(st);
+    }
+    
+    
+    public void llenaTabla(JTable tabla){
+        MySQLDB.conectar();
+        String cadena="Select id_proyecto, proyecto.nombre, name, "
+                + "constructor.nombre,municipios.municipio,estado from proyecto join constructor "
+                + "on constructor.id_constructor = proyecto.id_constructor join municipios on "
+                + "proyecto.id_municipio = municipios.id_municipio join estados on "
+                + "municipios.id_estado=estados.id_estado";
+        Statement st = MySQLDB.conexion();
+        ResultSet rs = MySQLDB.consultaQuery(st, cadena);
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("ID");
+        model.addColumn("Proyecto");
+        model.addColumn("Constructor");
+        model.addColumn("municipio");
+        model.addColumn("estado");
+        if (rs!=null) {
+            try {
+                while (rs.next()) {
+                    Object dato[]=new Object[5];
+                    for(int i=0;i<5;i++){
+                        dato[i]=rs.getString(i+1);
+                    }
+                    model.addRow(dato);
+                } 
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+        }
+        tabla.setModel(model);
+        MySQLDB.cerrar1(rs);
         MySQLDB.cerrar(st);
     }
 }

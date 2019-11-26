@@ -73,7 +73,10 @@ public class OAdministrador implements ActionListener{
             
         } else if(presionado == boton5){
             menu.setVisible(false);
-            new GUIListaProyecto().setVisible(true);
+            //new GUIListaProyecto().setVisible(true);
+            GUIListaProyecto lisP=new GUIListaProyecto();
+            new GestorProyecto().llenaTabla(lisP.proyectoTabla);
+            lisP.setVisible(true);
             
         } else if(presionado == boton6){
             menu.setVisible(false);
