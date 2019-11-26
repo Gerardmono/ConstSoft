@@ -14,8 +14,8 @@ import javax.swing.*;
  * @author bakai
  */
 public class OModelo implements ActionListener{
-    JTextField texto1,texto2,texto3,texto4,texto5;
-    JComboBox combo1,combo2,comb3;
+    JTextField texto1,texto2,texto3,texto4,texto5,texto6;
+    JComboBox combo1,combo2,combo3;
     JButton boton;
 
     public OModelo(JTextField texto1, JTextField texto2, JTextField texto3, JTextField texto4, 
@@ -25,9 +25,10 @@ public class OModelo implements ActionListener{
         this.texto3 = texto3;
         this.texto4 = texto4;
         this.texto5 = texto5;
+        
         this.combo1 = combo1;
         this.combo2 = combo2;
-        this.comb3 = comb3;
+        this.combo3 = comb3;
         this.boton = boton;
     }
    
@@ -39,6 +40,7 @@ public class OModelo implements ActionListener{
         
         if(presionado == boton){
             GestorModelo modelo =new GestorModelo();
+            modelo.crearModelo(texto1, texto2, texto3, texto4, texto5, combo1, combo2, combo3);
            
         }
     }

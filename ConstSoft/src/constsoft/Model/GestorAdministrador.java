@@ -6,15 +6,16 @@
 package constsoft.Model;
 
 import java.sql.Statement;
-import javax.swing.JOptionPane;
-
+import javax.swing.*;
 /**
  *
  * @author Gerardo Ramirez
  */
 public class GestorAdministrador {
     
-    
+    public void crearAdministrador(JTextField texto1, JTextField texto2, JTextField texto3, JTextField texto4, JPasswordField pass1, JPasswordField pass2){
+        String name,app,apm,correo,pass,conpass;
+    }
     public void insertarAdministrador(String name,String telefono,String direccion,String correo,String pass){
          MySQLDB.conectar();
          int decision;
