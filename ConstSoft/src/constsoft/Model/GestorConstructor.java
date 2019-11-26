@@ -82,10 +82,13 @@ public class GestorConstructor {
     
     public void eliminarConst(JTable tabla){ 
         DefaultTableModel tm = (DefaultTableModel) tabla.getModel();
-        int id = (int) tm.getValueAt(tabla.getSelectedRow(),0);
+        String dato=(String) tm.getValueAt(tabla.getSelectedRow(),0);
+        int id = Integer.parseInt(dato);
         MySQLDB.conectar();
         String cadena="delete from constructor where id_constructor="+id;
         Statement st = MySQLDB.conexion();
+        MySQLDB.consultaActualiza(st, cadena);
+        MySQLDB.cerrar(st);
     }
     
     public void visualizar_constructoras(){
