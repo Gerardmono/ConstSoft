@@ -220,13 +220,13 @@ public class GestorProyecto {
     
     public void llenaTabla(JTable tabla){
         MySQLDB.conectar();
-        String cadena="Select id_proyecto, proyecto.nombre, name, "
+        String cadena1="Select id_proyecto, proyecto.nombre, name, "
                 + "constructor.nombre,municipios.municipio,estado from proyecto join constructor "
-                + "on constructor.id_constructor = proyecto.id_constructor join municipios on "
+                + "on proyecto.id_constructor = constructor.id_constructor join municipios on "
                 + "proyecto.id_municipio = municipios.id_municipio join estados on "
-                + "municipios.id_estado=estados.id_estado";
+                + "municipios.id_estado=estados.id_estado join formapago on proyecto.id_fpag=formapago.id_formaP";
         Statement st = MySQLDB.conexion();
-        ResultSet rs = MySQLDB.consultaQuery(st, cadena);
+        ResultSet rs = MySQLDB.consultaQuery(st, cadena1);
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("ID");
         model.addColumn("Proyecto");
