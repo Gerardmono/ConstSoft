@@ -5,10 +5,15 @@
  */
 package constsoft.Controller;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 /**
  *
  * @author bakai
  */
-public class OReporte {
+public class OReporte{
+
+
     
 }

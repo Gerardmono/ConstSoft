@@ -17,10 +17,10 @@ public class GUICrearModelo extends javax.swing.JFrame {
      */
     public GUICrearModelo() {
         initComponents();
-        GestorModelo.llenarComboPago();
+        
         GestorModelo.llenarComboProyecto();
         GestorModelo.llenarComboPropiedad();
-        OModelo omodel = new OModelo(modeloField,mconsField,mterField,nivelField,precioField,pagoComb,propiedadCombo,proyectoComb,saveButton);
+        OModelo omodel = new OModelo(modeloField,mconsField,mterField,nivelField,precioField,propiedadCombo,proyectoComb,saveButton);
         saveButton.addActionListener(omodel);
         
     }
@@ -34,7 +34,6 @@ public class GUICrearModelo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pagoComb = new javax.swing.JComboBox<>();
         saveButton = new javax.swing.JButton();
         modeloField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -46,7 +45,6 @@ public class GUICrearModelo extends javax.swing.JFrame {
         nivelField = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         precioField = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         proyectoComb = new javax.swing.JComboBox<>();
         propiedadCombo = new javax.swing.JComboBox<>();
@@ -55,12 +53,6 @@ public class GUICrearModelo extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        pagoComb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pagoCombActionPerformed(evt);
-            }
-        });
 
         saveButton.setText("Guardar");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
@@ -96,8 +88,6 @@ public class GUICrearModelo extends javax.swing.JFrame {
                 precioFieldActionPerformed(evt);
             }
         });
-
-        jLabel6.setText("Formade Pago");
 
         jLabel7.setText("Nombre de proyecto");
 
@@ -153,12 +143,10 @@ public class GUICrearModelo extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
-                                    .addComponent(jLabel6)
                                     .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(pagoComb, 0, 188, Short.MAX_VALUE)
-                                    .addComponent(proyectoComb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(proyectoComb, 0, 188, Short.MAX_VALUE)
                                     .addComponent(propiedadCombo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
@@ -190,11 +178,7 @@ public class GUICrearModelo extends javax.swing.JFrame {
                     .addComponent(nivelField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
                     .addComponent(precioField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(pagoComb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(propiedadCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -202,17 +186,13 @@ public class GUICrearModelo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(proyectoComb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addComponent(saveButton)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void pagoCombActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagoCombActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pagoCombActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         // TODO add your handling code here:
@@ -276,7 +256,6 @@ public class GUICrearModelo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -284,7 +263,6 @@ public class GUICrearModelo extends javax.swing.JFrame {
     private javax.swing.JTextField modeloField;
     private javax.swing.JTextField mterField;
     private javax.swing.JTextField nivelField;
-    public static javax.swing.JComboBox<String> pagoComb;
     private javax.swing.JTextField precioField;
     public static javax.swing.JComboBox<String> propiedadCombo;
     public static javax.swing.JComboBox<String> proyectoComb;

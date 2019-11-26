@@ -49,6 +49,11 @@ public class GUIListaProyecto extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        modeloTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                modeloTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(modeloTable);
 
         jLabel1.setText("Nombre del proyecto");
@@ -57,6 +62,11 @@ public class GUIListaProyecto extends javax.swing.JFrame {
 
         jButton2.setText("Regresar");
         jButton2.setToolTipText("");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel9.setFont(new java.awt.Font("Dialog", 3, 24)); // NOI18N
         jLabel9.setText("Lista proyectos");
@@ -116,6 +126,14 @@ public class GUIListaProyecto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void modeloTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modeloTableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modeloTableMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
