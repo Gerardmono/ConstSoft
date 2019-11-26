@@ -57,7 +57,18 @@ public class GUICrearProyecto extends javax.swing.JFrame {
             }
         });
 
+        muniCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                muniComboActionPerformed(evt);
+            }
+        });
+
         jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Regresar");
         jButton2.setToolTipText("");
@@ -143,6 +154,14 @@ public class GUICrearProyecto extends javax.swing.JFrame {
     private void nomFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nomFieldActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void muniComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_muniComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_muniComboActionPerformed
 
     /**
      * @param args the command line arguments

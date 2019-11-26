@@ -15,15 +15,26 @@ public class GestorAdministrador {
     
     public void crearAdministrador(JTextField texto1, JTextField texto2, JTextField texto3, JTextField texto4, JPasswordField pass1, JPasswordField pass2){
         String name,app,apm,correo,pass,conpass;
+        name=texto1.getText();
+        app=texto2.getText();
+        apm=texto3.getText();
+        correo=texto4.getText();
+        pass=pass1.getText();
+        conpass=pass2.getText();
+        if(pass.equals(conpass)){
+            insertarAdministrador(name,app,apm,correo,pass);
+        }else{
+            JOptionPane.showMessageDialog(null,"Las Contraseñas no coinciden","Error",JOptionPane.ERROR_MESSAGE);
+        }
     }
-    public void insertarAdministrador(String name,String telefono,String direccion,String correo,String pass){
+    public void insertarAdministrador(String name,String app,String apm,String correo,String pass){
          MySQLDB.conectar();
          int decision;
          Statement st = MySQLDB.conexion();
          String query;
          query="begin";
          MySQLDB.consultaActualiza(st, query);
-         query="insert into administrador values('0','"+name+"','"+telefono+"','"+direccion+"','"+correo+"','"+pass+"')";
+         query="insert into administrador values('0','"+name+"','"+app+"','"+apm+"','"+correo+"','"+pass+"')";
          MySQLDB.consultaActualiza(st, query);
          decision=JOptionPane.showConfirmDialog(null,"Desea guardar los datos los datos");
          if(decision==0){

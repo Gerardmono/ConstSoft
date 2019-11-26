@@ -42,7 +42,7 @@ public class GUICrearCitaConst extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Fecha de cita");
+        jLabel1.setText("Fecha de cita espacio");
 
         jLabel2.setText("nombre");
 

@@ -34,7 +34,8 @@ public class OAdministrador implements ActionListener{
         this.boton7 = boton7;
     }
 
-    public OAdministrador(JTextField texto1, JTextField texto2, JTextField texto3, JTextField texto4, JPasswordField pass1, JPasswordField pass2, JButton guardar) {
+    public OAdministrador(JTextField texto1, JTextField texto2, JTextField texto3, 
+            JTextField texto4, JPasswordField pass1, JPasswordField pass2, JButton guardar) {
         this.texto1 = texto1;
         this.texto2 = texto2;
         this.texto3 = texto3;
@@ -80,6 +81,7 @@ public class OAdministrador implements ActionListener{
         }else if(presionado == guardar){
             menu.setVisible(false);
             GestorAdministrador admin= new GestorAdministrador();
+            admin.crearAdministrador(texto1, texto2, texto3, texto4, pass1, pass2);
         }
     }
     
