@@ -190,7 +190,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="24" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Crear perfil Proyecto"/>
+        <Property name="text" type="java.lang.String" value="Crear Proyecto"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">

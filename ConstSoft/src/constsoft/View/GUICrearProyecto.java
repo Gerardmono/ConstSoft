@@ -84,7 +84,7 @@ public class GUICrearProyecto extends javax.swing.JFrame {
         jButton2.setToolTipText("");
 
         jLabel9.setFont(new java.awt.Font("Dialog", 3, 24)); // NOI18N
-        jLabel9.setText("Crear perfil Proyecto");
+        jLabel9.setText("Crear Proyecto");
 
         jLabel5.setText("Constructor");
 

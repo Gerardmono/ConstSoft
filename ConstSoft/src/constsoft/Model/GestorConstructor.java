@@ -5,9 +5,10 @@
  */
 package constsoft.Model;
 
-import java.sql.Statement;
+import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -46,6 +47,45 @@ public class GestorConstructor {
          }
          MySQLDB.consultaActualiza(st, query);
          MySQLDB.cerrar(st);
+    }
+    
+    public void llenaTabla(JTable tabla){
+        MySQLDB.conectar();
+        String cadena="Select id_constructor, nombre, constructor.telefono, "
+                + "correo, nombre_completo from constructor join constructora "
+                + "on constructor.id_constructora = constructora.id_constructora";
+        Statement st = MySQLDB.conexion();
+        ResultSet rs = MySQLDB.consultaQuery(st, cadena);
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("ID constructor");
+        model.addColumn("Nombre");
+        model.addColumn("Telefono");
+        model.addColumn("Correo");
+        model.addColumn("constructora");
+        if (rs!=null) {
+            try {
+                while (rs.next()) {
+                    Object dato[]=new Object[5];
+                    for(int i=0;i<5;i++){
+                        dato[i]=rs.getString(i+1);
+                    }
+                    model.addRow(dato);
+                } 
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+        }
+        tabla.setModel(model);
+        MySQLDB.cerrar1(rs);
+        MySQLDB.cerrar(st);
+    }
+    
+    public void eliminarConst(JTable tabla){
+        DefaultTableModel tm = (DefaultTableModel) tabla.getModel();
+        int id = (int) tm.getValueAt(tabla.getSelectedRow(),0);
+        MySQLDB.conectar();
+        String cadena="delete from constructor where id_constructor="+id;
+        Statement st = MySQLDB.conexion();
     }
     
     public void visualizar_constructoras(){

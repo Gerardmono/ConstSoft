@@ -16,7 +16,7 @@ public class MySQLDB {
     public static Connection conexion=null; 
     private static String bd = "consoft"; // Nombre de BD.
     public static final String user="root";
-    public static final String password="";
+    public static final String password="hola";
     private static String driver = "com.mysql.jdbc.Driver";
     // Ruta del servidor.
     private static String server = "jdbc:mysql://localhost/" + bd;
@@ -26,7 +26,7 @@ public class MySQLDB {
             conexion = DriverManager.getConnection(server,user,password);
         } catch (Exception e) {
             System.out.println("Error: Imposible realizar la conexion a BD.");
-            e.printStackTrace();
+            e.printStackTrace();        
         }
     }
  

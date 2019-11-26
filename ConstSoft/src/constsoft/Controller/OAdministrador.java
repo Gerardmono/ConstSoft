@@ -6,6 +6,7 @@
 package constsoft.Controller;
 
 import constsoft.Model.GestorAdministrador;
+import constsoft.Model.*;
 import constsoft.View.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -61,8 +62,10 @@ public class OAdministrador implements ActionListener{
             new GUICrearPerfilContructor().setVisible(true);
             
         } else if(presionado == boton3){
-             menu.setVisible(false);
-            new GUIListaPerfilConst().setVisible(true);
+            menu.setVisible(false);
+            GUIListaPerfilConst lisC=new GUIListaPerfilConst();
+            new GestorConstructor().llenaTabla(lisC.jTable1);
+            lisC.setVisible(true);
            
         } else if(presionado == boton4){
             menu.setVisible(false);
